@@ -1,0 +1,50 @@
+/* A multidimensional array is an array of arrays. They are written with subscripts on []s. For eg. 
+ * A[2][2] is a multidimensional array with 4 elements and can be thought of as matrix of 2*2.
+ * 
+ * A = |1   2|
+ *     |3   4|    
+ *
+ * where the members of array A are 1, 2, 3, and 4 with indices 1's index = [0][0], 2's index= [0][1], 3's \
+ * index [1][0], 4's index [1][1].
+ *
+ */
+
+/* This will enter 4 elements to a 2-dimensional array X. */
+
+#include<stdio.h>
+#define ROW 10
+#define COL 5
+
+int main(void)
+{
+	int X[ROW][COL], Y[ROW][COL], Z[ROW][COL],  i, j;    // X[2][2];
+	
+	for(i=0; i < ROW; i++)     // for (i=0; i<2; i++)
+	{
+		for (j=0; j < COL; j++)
+		{
+			X[i][j] = j;
+	       		Y[i][j] = i;
+			Z[i][j] = X[i][j] + Y[i][j];		// i=0: j=0, X[0][0] = 0; j=1, X[0][1] = 0; j=2;
+					                        // i=1: j=0; X[1][0] = 1; j =1, X[1][1] = 1; j=2;
+		}
+	}
+
+	for(i=0; i<ROW; i++)
+	{
+		for(j=0; j<COL; j++)
+		{
+			printf("%d\t", Z[i][j]);
+		}
+		printf("\n");
+	}
+	
+	return 0;
+}
+
+
+/*
+ *                            1   1   +   2  2    =    3   3
+ *                            1   1       2  2         3   3
+*/
+
